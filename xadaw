@@ -1,0 +1,20 @@
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+local function teleportToDestination(destinationPosition)
+    character:SetPrimaryPartCFrame(CFrame.new(destinationPosition))
+    wait(0.1)
+end
+
+local startTime = tick() -- Get the current time
+
+while tick() - startTime < 60 do -- Repeat for one minute
+    teleportToDestination(Vector3.new(1619, 8, -1446))
+    teleportToDestination(Vector3.new(1686, 8, -1432))
+    teleportToDestination(Vector3.new(1663, 8, -1443))
+    teleportToDestination(Vector3.new(1663, 8, -1464))
+    teleportToDestination(Vector3.new(1618, 8, -1419))
+    teleportToDestination(Vector3.new(1600, 8, -1431))
+    teleportToDestination(Vector3.new(1644, 8, -1432))
+    teleportToDestination(Vector3.new(1641, 8, -1471))
+end
