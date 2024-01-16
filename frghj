@@ -1,18 +1,13 @@
 local workspace = game:GetService("Workspace")
 local part = workspace.Core.FreeDiamondsClaim
+local player = game.Players.LocalPlayer
 
-local originalSize = part.Size
-
-local targetSize = Vector3.new(2050, 2050, 2050)
-
-local function performResizeLoop()
+local function performMoveLoop()
     while true do
-        part.Size = targetSize
-        wait(0.2)
+        part.Position = player.Character and player.Character.HumanoidRootPart.Position or Vector3.new(0, 0, 0)
 
-        part.Size = originalSize
-        wait(60)
+        wait(10)
     end
 end
 
-performResizeLoop()
+performMoveLoop()
