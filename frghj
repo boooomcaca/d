@@ -1,0 +1,18 @@
+local workspace = game:GetService("Workspace")
+local part = workspace.Core.FreeDiamondsClaim
+
+local originalSize = part.Size
+
+local targetSize = Vector3.new(2050, 2050, 2050)
+
+local function performResizeLoop()
+    while true do
+        part.Size = targetSize
+        wait(0.2)
+
+        part.Size = originalSize
+        wait(60)
+    end
+end
+
+performResizeLoop()
