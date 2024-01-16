@@ -1,24 +1,18 @@
 local workspace = game:GetService("Workspace")
 local part = workspace.Core.FreeDiamondsClaim
 
--- Original size of the part
 local originalSize = part.Size
 
--- Target size
 local targetSize = Vector3.new(2050, 2050, 2050)
 
--- Function to perform the resize loop
 local function performResizeLoop()
     while true do
-        -- Enlarge the part for 0.2 seconds
         part.Size = targetSize
         wait(0.2)
 
-        -- Return to original size for 0.2 seconds
         part.Size = originalSize
         wait(60)
     end
 end
 
--- Run the function to start the loop
 performResizeLoop()
